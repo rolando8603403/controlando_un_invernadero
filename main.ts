@@ -1,5 +1,4 @@
-let Humedad = 0
-input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
     basic.showNumber(input.temperature())
     while (input.temperature() < 8) {
         music.startMelody(music.builtInMelody(Melodies.JumpDown), MelodyOptions.OnceInBackground)
@@ -17,9 +16,9 @@ input.onButtonPressed(Button.A, function () {
         basic.showString("T.OK")
         basic.showIcon(IconNames.Yes)
     }
+    
 })
-input.onButtonPressed(Button.B, function () {
-    Humedad = pins.analogReadPin(AnalogPin.P0)
+input.onButtonPressed(Button.B, function on_button_pressed_b() {
     basic.showNumber(pins.analogReadPin(AnalogPin.P0))
     while (pins.analogReadPin(AnalogPin.P0) < 200) {
         music.startMelody(music.builtInMelody(Melodies.JumpDown), MelodyOptions.ForeverInBackground)
@@ -37,4 +36,5 @@ input.onButtonPressed(Button.B, function () {
         basic.showString("H.OK")
         basic.showIcon(IconNames.Yes)
     }
+    
 })
